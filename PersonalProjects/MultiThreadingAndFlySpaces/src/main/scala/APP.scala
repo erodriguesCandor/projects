@@ -3,6 +3,11 @@
   */
 object APP {
   def main(args: Array[String]): Unit = {
-    //TODO
+    val id = Manager.makeRequest("coffee")
+    Thread.sleep(3*1000)
+    println(Manager.getInfo(id))
+    println(Manager.deliveryMoney(id,50))
+    Thread.sleep(3*1000)
+    println(Manager.getInfo(id))
   }
 }
