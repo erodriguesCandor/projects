@@ -1,3 +1,4 @@
+import java.util.UUID
 import java.util.concurrent.atomic.AtomicInteger
 
 import com.zink.fly.FlyPrime
@@ -31,7 +32,7 @@ object Manager {
   def readInfoFromSpace(infoTemplate: Information) = space.read(infoTemplate, TAKETIME)
 
   def makeRequest(ask: String): String = {
-    val requestID = idGenerator.getAndIncrement().toString
+    val requestID = UUID.randomUUID().toString
     val info = new Information(requestID, REQUEST, ask, CASH)
     writeInfoToSpace(info)
     val infoProcessing = new Information(requestID, PROCESSING, null, MANAGER)

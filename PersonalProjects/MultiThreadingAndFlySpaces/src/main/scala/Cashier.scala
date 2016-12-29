@@ -22,22 +22,18 @@ class Cashier extends Thread {
 
   override def run(): Unit = {
     while (true) {
-      readInfoFromSpace(infoTemplate) match {
+      getInfoFromSpace(infoTemplate) match {
         case Information(id, SENDMONEY, args, _) =>
-          println("sendmoneny")
-          val price = dataBase.get(id)
-          if(price!=args.toInt){
-            getInfoFromSpace(new Information(id,null,null,CASH))
-            println("Delivery Sent")
-          }
+          println("MoneyReceived")
           writeInfoToSpace(new Information(id, "READY","coffee",MANAGER))
 
         case Information(id, REQUEST, args, _) =>
           println("request")
           getInfoFromSpace(new Information(id,null,null,null))
-          getInfoFromSpace(new Information(id,null,null,null))
+          //getInfoFromSpace(new Information(id,null,null,null))
           dataBase.put(id.toString,50)
           writeInfoToSpace(new Information(id, RECEIPT, "50", MANAGER))
+          println("requested")
         case _ => ()
       }
     }
