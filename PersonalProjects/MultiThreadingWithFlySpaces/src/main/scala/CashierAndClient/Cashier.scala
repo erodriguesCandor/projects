@@ -1,3 +1,5 @@
+package CashierAndClient
+
 import com.zink.fly.FlyPrime
 import com.zink.fly.kit.FlyFactory
 
@@ -30,7 +32,7 @@ class Cashier extends Thread {
         case Information(id, REQUEST, args, _) =>
           println("request")
           getInfoFromSpace(new Information(id,null,null,null))
-          //getInfoFromSpace(new Information(id,null,null,null))
+          //getInfoFromSpace(new CashierAndClient.Information(id,null,null,null))
           dataBase.put(id.toString,50)
           writeInfoToSpace(new Information(id, RECEIPT, "50", MANAGER))
           println("requested")

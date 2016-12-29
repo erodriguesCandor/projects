@@ -1,3 +1,5 @@
+package CashierAndClient
+
 /**
   * Created by #EduardoRodrigues on 28/12/2016.
   */

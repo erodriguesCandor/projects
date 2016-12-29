@@ -1,3 +1,5 @@
+package CashierAndClient
+
 import java.util.UUID
 import java.util.concurrent.atomic.AtomicInteger
 
