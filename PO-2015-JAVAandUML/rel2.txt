@@ -1,0 +1,32 @@
+----------------------------------------------
+|RELATORIO 2 - PROJECTO POOF - PO - 2014/2015|
+----------------------------------------------
+
+-----------Class Builder------------
+Esta classe sofreu apenas algumas alterações ligeiras em relação à entrega intermédia. Quando a criámos não foi pensado que poderiam existir no FileSystem ficheiros ou directórios de um utilizador nas pastas (privadas) de outro utilizador; no entanto, isto é possível caso seja o utilizador Root a criar essa entrada e posteriormente alterar o seu dono para outro utilizador, não necessariamente o dono das pastas referidas. Sendo assim, a classe Builder passa a criar correctamente este tipo de entradas usando o utilizador Root para as criar e mudando, de seguida, o seu dono. Desta forma, a classe funciona de acordo com os requisitos.
+Para além desta alteração, decidimos usar variáveis auxiliares no processo de criação de ficheiros e directórios; pensamos que o uso acrescentado de memória é justificado pela melhoria significativa na legibilidade de um bloco de código que era, anteriormente, bastante críptico.
+
+-----------Class Manager------------
+Acrescentámos a esta classe um atributo boolean, necessário para implementar a funcionalidade em falta que permite ao utilizador guardar a sessão actual antes de criar ou abrir outra. Este atributo é alterado para true sempre que há uma alteração na sessão actual (que tenha repercussões efectivas na salvaguarda da mesma; a alteração do directório de trabalho, por exemplo, não despoleta a mudança do atributo), através do uso do método changed(). O boolean é devidamente restaurada para false quando se guarda, abre, ou cria uma sessão.
+
+---------Class Entry/User-----------
+Tendo em atenção que o uso de instanceof quebra de certa forma a modularidade do projecto, os métodos que recorriam a esta keyword passaram a usar novos métodos adicionais, existentes em cada entrada ou utilizador para verificar se este é de um determinado tipo (por exemplo, isFile() para verificar se é um ficheiro). Os métodos estão implementados nas superclasses de forma a devolver o valor false por predefinição; assim, as subclasses apenas têm que redefinir um método, o que diz respeito ao seu próprio tipo. Desta forma, a manutenção e alteração posterior do código torna-se mais fácil e segura.
+
+---------Class FileSystem-----------
+Esta classe é responsável por executar os métodos de produção de strings como listEntries() e listUsers(). Nestes, de forma a manter a sua implementação simplificada, a remoção do último caracter '\n' é feita através do método substring da classe String (evitando separar a última iteração do ciclo for nestes métodos). É também responsável por delegar os pedidos recebidos pelo Manager para as classes devidas do sistema de ficheiros. Para este efeito, foram criados vários métodos auxiliares (já presentes na entrega intermédia) que asseguram a correcta separação de responsabilidades. Esta classe é também responsável por verificar a validade dos pedidos recebidos e lançar (ou transmitir) excepções conforme necessário. 
+
+----------Class Directory-----------
+Como já referido no relatório da entrega intermédia, foram criados diversos métodos de forma a garantir um nível mais alto de abstracção e garantir a não exposição do core. Esta classe passou também a ser responsável pelo lançamento de algumas excepções, relacionadas com o acesso e modificação de entradas. Com esta alteração, o tratamento de excepções fica de acordo com o pressuposto que a classe que detecta o erro é a responsável pelo lançamento da excepção.
+
+------Verificações Adicionais-------
+As classes Manager, FileSystem e Builder têm blocos try/catch em alguns dos seus métodos. O tratamento das excepções passa por imprimir o seu StackTrace, visto que são excepções que aconteceriam apenas em condições anómalas (por exemplo, a não-existência do utilizador root). Este procedimento confere, assim, maior robustez ao código.
+
+---------Diferenças no UML----------
+O diagrama de classes inicial não corresponde, como seria expectável, ao actual. As alterações feitas reflectem a necessidade de criação de mais métodos e atributos de forma a garantir um maior nível de abstracção e assegurar as funcionalidades necessárias.
+
+-----------Melhoramentos------------
+Optámos por não implementar Visitors relativamente ao tratamento de Strings; sendo assim, este aspecto manteve-se na responsabilidade do core. A decisão de manter a implementação anterior advém das dificuldades que encontrámos ao tentar implementar correctamente uma nova solução, visto que esta implicaria novos problemas de separação de responsabilidades entre o core e o textui, e provocaria a necessidade de alteração de várias partes do código base, podendo ter repercussões que não fossem adequadamente detectadas e corrigidas a curto prazo.
+
+--------Métodos Inutilizados--------
+Alguns dos métodos existentes nas classes do core não são utilizados nesta versão do projecto. No entanto, estão definidos devido à sua potencial utilidade em acrescentos futuros ao código, facilitando o desenvolvimento incremental.
+

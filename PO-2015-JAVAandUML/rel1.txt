@@ -1,0 +1,23 @@
+----------------------------------------------
+|RELATORIO 1 - PROJECTO POOF - PO - 2014/2015|
+----------------------------------------------
+
+-------Class Builder--------
+Esta classe é fundamental para a inicialização da aplicação a partir de um ficheiro de texto. Vai criar um sistema de ficheiros a partir do conteúdo deste ficheiro, dividindo cada linha nos campos apropriados para originar um objecto do sistema de ficheiros. A criação de ficheiros e directórios envolve maior complexidade e cuidado, por ser necessária a criação do caminho até a entrada que vai ser criada. Neste contexto, é necessário verificar se o directório indicado no caminho já existe ou tem de ser criado; ao fazer esta verificação, temos especial cuidado com o directório raíz do sistema de ficheiros (que é criado na sua inicialização). Assim, asseguramos que não se apaga nenhuma referência nem se criam directórios repetidos. Finalmente, criamos a entrada no directório apropriado. A criação de utilizadores é bastante mais simples, sendo apenas necessário criar um novo utilizador (e, consequentemente, o seu directório principal) e inseri-lo na colecção de utilizadores do sistema de ficheiros. Note-se que esta classe usa uma implementação do padrão Factory, tal como apresentado na Wiki e referido nas aulas.
+
+----------GetPath-----------
+Este método devolve uma string com o caminho deste o directório inicial até ao actual, chamando-se recursivamente e adicionando o nome de cada directório nas sucessivas chamadas. Uma vez que pode existir um directório cujo directório-pai tenha o mesmo nome, a condição de paragem tem de ser feita comparando o nome com o do directório raíz ("/"), que é único.
+
+---------Abstração----------
+De forma a garantir o máximo de abstracção foram criados diversos métodos auxiliares (nomeadamente na classe Directory) não previstos no diagrama de classes inicial. Estes métodos asseguram o encapsulamento da informação, e neste caso específico, protegem a implementação das entradas do sistema de ficheiros. Assim, o sistema de ficheiros necessita apenas de conhecer o nome da entrada para poder interagir com esta. Naturalmente, existem ainda outros métodos não se encontram no diagrama de classes inicial (e.g., o método changeDirectory na classe Manager), porque se revelaram necessários para o funcionamento do projecto, e foram, por isso, implementados.
+
+------------Root------------
+Esta classe surge da necessidade de verificar a permissão para efectuar certas operações, tendo em conta os privilégios acrescidos do utilizador root relativamente aos restantes. Apesar de não ser estritamente necessária, esta classe tem importância a nível conceptual, facilitando também o desenvolvimento do código do projecto.
+
+-------Uso de TreeMap-------
+É usado um TreeMap para guardar os objectos do sistema de ficheiros, sendo usado o nome (ou username, no caso dos utilizadores) como chave. O uso desta colecção garante que os objectos se encontram ordenados, tornando assim mais simples a sua representação textual de acordo com as especificações do enunciado. É também útil para aceder aos objectos em causa através dos seus identificadores, já que é esta a informação que nos é fornecida pelo text ui.
+
+----FileSystem Predicate----
+Esta classe, que deriva da classe ValidityPredicate, verifica (através do seu método isValid) se existe um sistema de ficheiros inicializado na aplicação, determinando assim se o método que a usa deve ou não ser mostrado e executado. Para isso, recorre a um método da classe Manager. Visto que esta é a única verificação necessária para os comandos da aplicação (i.e., os comandos têm necessidade de um ValidityPredicate no seu construtor têm-na sempre pelo mesmo motivo - a verificação da existência de um sistema de ficheiros inicializado), considerámos mais vantajoso implementar a classe como subclasse de ValidityPredicate do que como classe anónima em cada um dos comandos.
+
+

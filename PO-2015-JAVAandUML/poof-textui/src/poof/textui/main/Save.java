@@ -1,0 +1,39 @@
+/** @version $Id: Save.java,v 1.8 2014/11/14 01:04:01 ist179027 Exp $ */
+package poof.textui.main;
+
+import static ist.po.ui.Dialog.IO;
+import ist.po.ui.Command;
+import ist.po.ui.DialogException;
+import ist.po.ui.ValidityPredicate;
+
+import java.io.IOException;
+
+import poof.system.Manager;
+
+/**
+ * Save to file under current name (if unnamed, query for name).
+ */
+public class Save extends Command<Manager> {
+	/**
+	 * @param manager
+	 */
+	public Save(Manager manager) {
+		super(MenuEntry.SAVE, manager, new FileSystemPredicate(manager));
+	}
+
+	/** @see ist.po.ui.Command#execute() */
+	@Override
+	public final void execute() throws DialogException, IOException {
+		try {
+		   if (_receiver.checkSave())
+		      _receiver.save(_receiver.getSave());
+		   else {
+		      String fsname = IO.readString(Message.newSaveAs());
+		      _receiver.save(fsname);
+		   }
+	   }
+	   catch (ClassNotFoundException e) {
+	      e.printStackTrace();
+	   }
+	}
+}

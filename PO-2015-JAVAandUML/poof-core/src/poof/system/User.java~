@@ -1,0 +1,115 @@
+/* Project - POOF */
+package poof.system;
+import java.io.*;
+
+/**
+ * class User
+ *    Represents the file system's user, having its own directory. Important for limiting access to certain content and operations.
+ */
+public class User implements Serializable {
+   /** the user's username */
+   private String _uname;
+   
+   /** the user's name */
+   private String _name;
+   
+   /** the user's Home directory */
+   private Directory _home;
+   
+   /**
+    * Creates a new User
+    *
+	 * @param uname
+	 *             the user's username
+	 * @param name
+	 *             the user's name
+	 * @param home
+	 *             the user's Home directory
+	 */
+   public User(String uname, String name, Directory home) {
+      _uname=uname;
+      _name=name;
+      _home=home;
+   }
+   
+   /**
+    * Creates a new User
+    *
+	 * @param uname
+	 *             the user's username
+	 * @param name
+	 *             the user's name
+	 */
+   public User(String uname, String name) {
+      _uname=uname;
+      _name=name;
+   }
+   
+   /**
+	 * @return the user's username
+	 */
+   public String getUname() { 
+      return _uname; 
+   }
+   
+   /**
+	 * @return the user's name
+	 */
+   public String getName() { 
+      return _name; 
+   }
+   
+   /**
+	 * @return the user's Home directory
+	 */
+   public Directory getHome() { 
+      return _home;                                                     
+   }                         
+
+   /**
+    * Change the user's name
+    *
+	 * @param name
+	 *            the user's new name
+	 */
+   public void setName(String name) { 
+      _name=name; 
+   }
+   
+   /**
+    * Change the user's home directory
+    *
+	 * @param home
+	 *            the user's new home directory
+	 */
+   public void setHome(Directory home) { 
+      _home=home; 
+   }
+  /**
+   * @see java.lang.Object#equals()
+	*/
+	@Override
+   public boolean equals(Object o) {
+		if(o instanceof User){
+			User u = (User) o;
+			return getUname().equals(u.getUname());
+		}
+		return false;
+   }
+   
+   
+   /**
+    * @return true, if the user is root; false, otherwise
+	 */
+	public boolean isRoot(){
+		return false;
+	}
+	
+   /**
+	 * @return the representation of the user
+	 */
+   public String getInfo() {
+      return getUname() + ":" + getName() + ":" + getHome().getPath();  // Define getPath() in Directory
+   }
+   
+}

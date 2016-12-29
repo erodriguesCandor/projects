@@ -1,0 +1,14 @@
+package poof.textui.main;
+
+import ist.po.ui.ValidityPredicate;
+import poof.system.Manager;
+
+public class FileSystemPredicate extends ValidityPredicate<Manager>{
+	public FileSystemPredicate(Manager manager) {
+		super(manager);
+	}
+	
+	public boolean isValid(){
+		return _receiver.checkFileSystem();
+	}
+}

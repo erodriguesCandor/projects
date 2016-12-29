@@ -1,0 +1,34 @@
+----------------------------
+
+//BLOCO-MAIS-ALTO   - SIM!
+funciona bem para maior numero de pecas
+produz bom numero pontos
+poucas vezes dá zero
+
+//BURACOS-TOTAIS  -NAO
+resultados desprezáveis
+produz muitos zeros!!
+
+//ESPACOS-LIVRES-TOPO
+resultados desprezáveis
+produz muitos zeros!!
+
+//ESPACOS-LIVRES-TOTAIS
+varia muito consoante o tabuleiro em que corre
+
+//irregularidades
+produz normalmente bons resultados
+
+//linhas-completas
+produz bons resultados
+em tabuleiros especificos(baixa representação) falha
+
+//linhas vazias
+perfomance inferior a linhas completas
+
+//media-altura-coluna e altura-colunas-regioes
+apesar de nao funcionarem produzem, aparentemente, dada a amostra, bons resultados
+
+
+CONCLUSAO: bloco-mais-alto ;  irregularidades ;  linhas-completas
+

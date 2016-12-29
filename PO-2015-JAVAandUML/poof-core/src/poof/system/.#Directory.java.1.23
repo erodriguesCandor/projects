@@ -1,0 +1,177 @@
+/* Project - POOF */
+package poof.system;
+import java.util.ArrayList;
+import java.util.TreeMap;
+import java.io.*;
+/* TODO: what's in the comments after each line (commented with '//') */
+
+/**
+ * class Directory
+ *    TODO: DESCRIPTION
+ */
+public class Directory extends Entry implements Serializable {
+	/*The Directory's Entries*/
+	private TreeMap<String,Entry> _entries = new TreeMap<String,Entry>();
+	
+	/*Creates a new Directory*/
+	public Directory(String name, Directory parent, User owner){
+		super(name,parent,owner);
+		_entries.put("..", parent);
+		_entries.put(".", this);
+	}
+	
+	/*Creates a new Directory*/
+	public Directory(String name, Directory parent, User owner, boolean privacy){
+		super(name, parent, owner, privacy);
+		_entries.put("..", parent);
+		_entries.put(".", this);
+	}
+	
+	/*Creates a new Directory*/
+	public Directory(String name, User owner){
+		super(name,owner);
+		setParent(this);
+		_entries.put("..", this);
+		_entries.put(".", this);
+	}
+	
+	/* 
+	 *Set's the Owner to Entry
+	 * @param ename
+	 * 	key associated to Entry 
+	 * @param owner
+	 * 	the new user
+	 */
+   public void setEntryOwner(String ename, User owner){
+      getEntry(ename).setOwner(owner);
+   }
+	/* 
+	 *Set's the Privacy to Entry
+	 * @param ename
+	 * 	key associated to Entry 
+	 * @param value
+	 * 	privacy's value
+	 */
+   public void setEntryPrivacy(String ename, boolean value){
+     getEntry(ename).setPrivacy(value);
+   }
+	/* 
+	 *Get's the file content from File
+	 * @param fname
+	 * 	key associated to File
+	 */
+   public String getFileContent(String fname){
+     return ((File)getEntry(fname)).getContent();
+   }	
+   /* 
+	 *Get's the info from Entry
+	 * @param ename
+	 * 	key associated to Entry
+	 */
+
+   public String getInfo(String ename){
+     return getEntry(ename).toString() + " " + ename;
+   }
+	/* 
+	 *Set's the Owner to Entry
+	 * @param ename
+	 * 	key associated to Entry 
+	 * @param owner
+	 * 	the new user
+	 */
+   public void addFileContent(String fname, String content){
+      ((File)getEntry(fname)).addContent(content);
+   }
+	/* 
+	 *Adds an Entry to Directory
+	 * @param entry
+	 * 	Entry to add
+	 */ 
+	public void addEntry(Entry entry){
+		_entries.put(entry.getName(), entry);
+	}
+	/** 
+	 *@Returns Directory's Size
+	 */
+	public int getSize(){
+		return _entries.size()*8;
+	}
+	/* 
+	 *@returns an Entry
+	 *@param name
+	 *    Key to find the Entry
+	 */
+	public Entry getEntry(String name){
+		//if(checkEntry(name))
+			return _entries.get(name);
+	}
+	/* 
+	 *@removes an Entry from Directory
+	 *@param name
+	 *	Key to find the Entry
+	 */
+	public void removeEntry(String name){
+		_entries.remove(name);
+	}
+	/** 
+	 *@Check if there's an Entry with Key name
+	 *
+    *@param name
+	 *    Key to find the Entry
+	 */
+	public boolean checkOwner(String ename, User user){
+		Entry entryToCheck = getEntry(ename);
+		return (entryToCheck.getPrivacy() || user instanceof Root || entryToCheck.getOwner() == user);
+	}
+   
+   /**
+	 * @param name
+	 *             the entry to check
+	 *
+	 * @return true, if the entry exists; false, otherwise      
+	 */
+	public boolean checkEntry(String name){
+		return _entries.containsKey(name);
+	} 
+	
+	/**
+	 * @param name
+	 *             the entry to check
+	 *
+	 * @return true, if the entry exists; false, otherwise      
+	 */
+	public boolean checkFile(String fname){
+		return (getEntry(fname) instanceof File);
+	} 
+	  
+   /**
+    * Get an ArrayList with all entries
+	 *
+	 * @return all entries
+	 */
+   public ArrayList<String> getKeys(){
+       return new ArrayList<String>(_entries.keySet());
+   }
+
+   
+   /**
+    * Get the complete path of a directory
+    *
+	 * @return the corresponding path            
+	 */
+	public String getPath(){
+	   if(getName().equals(getParent().getName()))
+	      return "";
+	   else
+	      return getParent().getPath() +"/"+ getName();
+	}
+	
+	/**
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	@SuppressWarnings("nls")
+	public String toString(){
+	   return ( "d " + super.toString());
+   }
+}

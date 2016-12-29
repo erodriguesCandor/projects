@@ -1,0 +1,10 @@
+package poof;
+
+import system.*;
+import exception.*;
+
+public class Test {
+   public static void main(String[] args) throws Exception {
+      Manager mgr = new manager("data.in");
+   }
+}

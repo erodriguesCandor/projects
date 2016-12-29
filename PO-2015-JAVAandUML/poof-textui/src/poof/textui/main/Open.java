@@ -1,0 +1,44 @@
+/** @version $Id: Open.java,v 1.8 2014/11/22 14:19:47 ist179027 Exp $ */
+package poof.textui.main;
+
+import static ist.po.ui.Dialog.IO;
+import ist.po.ui.Command;
+import ist.po.ui.DialogException;
+import ist.po.ui.ValidityPredicate;
+
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+import poof.system.Manager;
+
+/**
+ * Open existing file.
+ */
+public class Open extends Command<Manager> {
+
+	/**
+	 * @param manager
+	 */
+	public Open(Manager manager) {
+		super(MenuEntry.OPEN, manager);
+	}
+
+	/** @see ist.po.ui.Command#execute() */
+	@Override
+	public final void execute() throws DialogException, IOException {
+	   try {
+	      if (_receiver.checkStatus())
+	         if( IO.readBoolean(Message.saveBeforeExit()) )
+	            (new Save(_receiver)).execute();
+	      String fsname = IO.readString(Message.openFile());
+	      _receiver.open(fsname);
+		}
+		catch (FileNotFoundException e) {
+		   IO.println(Message.fileNotFound());
+		}
+		catch (ClassNotFoundException e) {
+		   e.printStackTrace();
+		}
+	}
+
+}

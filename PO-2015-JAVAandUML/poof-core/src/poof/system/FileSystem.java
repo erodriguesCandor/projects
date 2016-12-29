@@ -1,0 +1,382 @@
+/* Project - POOF */
+package poof.system;
+
+import java.util.TreeMap;
+import java.util.ArrayList;
+import poof.exception.*;
+import java.io.*;
+
+/**
+ * class FileSystem
+ *    Stores the users and entries. Operates on these objects according to requests from the manager.
+ */
+public class FileSystem implements Serializable {
+   /** the file system's users */
+   private TreeMap<String, User> _users = new TreeMap<String, User>();
+   
+   /** the file system's root directory */
+   private Directory _init;
+   
+   /** the file system's home direcotry */
+   private Directory _home;
+   
+   /** the file system's save file name */
+   private String _save = null;                    
+   
+   /**
+	 * Creates a new file system
+	 */
+   public FileSystem() {
+      try {
+         Root r = new Root();
+         _init = new Directory("/", r);
+         _home = new Directory("home", _init, r);
+         _init.addEntry(_home);
+         r.setHome(new Directory("root", _home, r));
+         _home.addEntry(r.getHome());
+         _users.put("root", r);
+      }
+      catch (CoreEntryExistsException e) { 
+         // never actually happens
+         e.printStackTrace();
+      }
+   }
+   
+   /**
+	 * @param uname
+	 *             the username to check
+	 *
+	 * @return true, if the user exists; false, otherwise      
+	 */
+	public boolean checkUser(String uname) {
+		return _users.containsKey(uname);
+	} 
+	
+   /**
+	 * @return the file system's users as an ArrayList
+	 */
+   public final ArrayList<User> getAll() {
+      return new ArrayList<User>(_users.values());
+   }
+	 
+   /**
+	 * @param uname
+	 *             a user's username
+	 * 
+	 * @return the requested user
+	 */
+	public final User getUser(String uname) throws CoreUserUnknownException { 
+	   if (!(checkUser(uname)))
+	      throw new CoreUserUnknownException(uname);
+	   else
+	      return _users.get(uname);
+	}
+	
+   /**
+	 * @return the file system's root directory
+	 */
+   public final Directory getInit() {
+      return _init;
+   }
+   
+   /**
+	 * @return the file system's home directory
+	 */
+   public final Directory getHome() {
+      return _home;
+   }
+   
+	/**
+	 * @return the file system's save file name
+	 */
+   public final String getSave() {
+      return _save;
+   }
+   
+   /**
+	* @return the root user
+	*/
+   public final User getRoot() throws CoreUserUnknownException {
+      return getUser("root");
+   }
+   
+	/**
+	 * @param uname
+	 *             a user's username
+	 * 
+	 * @return the requested user's home directory
+	 */
+	public final Directory getUserHome(String uname) throws CoreUserUnknownException { 
+	   return getUser(uname).getHome();
+	}
+	
+	/**
+	 * @param uname
+	 *             a user's username
+	 * 
+	 * @return the requested user's home directory
+	 */
+	public final Directory getDirectory(String dname, Directory dir) throws CoreEntryUnknownException, CoreIsNotDirectoryException { 
+	   if (!(dir.checkDirectory(dname)))
+	      throw new CoreIsNotDirectoryException(dname);
+	   return (Directory) dir.getEntry(dname);
+	}
+   
+   /**
+    * Add a new user to the file system
+    *
+	 * @param uname
+	 *             the new user's username
+	 * @param name
+	 *             the new user's name
+	 * @param user
+	 *             the user requesting the operation (must be root)
+	 */
+   public void addUser(String uname, String name, User user) throws CoreAccessDeniedException, CoreUserExistsException {
+      try { 
+         if (!(user.isRoot()))
+            throw new CoreAccessDeniedException(user.getUname());
+         else if (checkUser(uname))
+            throw new CoreUserExistsException(uname);
+         else {
+            if (getHome().checkEntry(uname))
+               removeEntry(uname, getHome(), user);
+            User u = new User(uname, name);
+            Directory d = new Directory(uname, getHome(), u);
+            getHome().addEntry(d);
+            u.setHome(d);
+            _users.put(uname, u);
+         }
+      }
+      catch (CoreEntryExistsException | CoreEntryUnknownException | CoreIllegalRemovalException e) { 
+         // never actually happens
+         e.printStackTrace();
+      }
+   }
+   
+   /**
+	 * Change the save file's name
+	 *
+	 * @param fsname
+	 *             the new name for the save file           
+	 */
+	public void setSave(String fsname) {
+	   _save = fsname;	      
+	}
+	
+	/**
+	 * @param ename
+	 *             the entry's name
+	 *
+	 * @param dir
+	 *             the directory to get the entry from
+	 *
+	 * @return the entry requested          
+	 */
+	public String showEntryInfo(String ename, Directory dir) throws CoreEntryUnknownException {
+	   return dir.printEntry(ename);
+	}
+   
+   /**
+	 * @param dir
+	 *             the directory to get the entries from
+	 *
+	 * @return the directory's entries, ordered by name            
+	 */
+	public String listEntries(Directory dir) { 
+	   String list = "";
+	   try {
+	      for (String ename: dir.getKeys())
+	         list += dir.printEntry(ename) + "\n";
+	   }
+	   catch (CoreEntryUnknownException e) { 
+         // never actually happens
+	      e.printStackTrace();
+	   }
+	   return list.substring(0, list.length()-1);
+	   
+	}
+	 
+	/**
+	 * Remove an entry from the specified directory
+	 *
+	 * @param ename
+	 *             the entry's name
+	 *
+	 * @param dir
+	 *             the directory to remove the entry from
+	 *
+	 * @param user
+	 *             the user requesting the operation           
+	 */
+	public void removeEntry(String ename, Directory dir, User user) throws CoreEntryUnknownException, CoreAccessDeniedException, CoreIllegalRemovalException { 
+	   if (ename.equals(".") || ename.equals(".."))
+	      throw new CoreIllegalRemovalException(ename);
+	   else if (!(dir.checkOwner(ename, user) && dir.checkOwner(".", user)))
+	      throw new CoreAccessDeniedException(user.getUname());
+	   else
+	      dir.removeEntry(ename);
+	}
+	
+	/**
+	 * Create a new file
+	 *
+	 * @param fname
+	 *             the new file's name
+	 *
+	 * @param dir
+	 *             the directory to put the file in
+	 *
+	 * @param user
+	 *             the user requesting the operation 
+	 * 
+	 * @param privacy
+	 *             the file's public or private attribute         
+	 */
+	public void newFile(String fname, Directory dir, User user, boolean privacy) throws CoreEntryExistsException, CoreAccessDeniedException { 
+	   try {
+	      if (!(dir.checkOwner(".", user)))
+	         throw new CoreAccessDeniedException(user.getUname());
+	      else
+	         dir.addEntry(new File(fname, dir, user, privacy));
+	   }
+	   catch (CoreEntryUnknownException e) { 
+         // never actually happens
+	      e.printStackTrace();
+	   }
+	}
+	
+	
+	
+	/**
+	 * Create a new directory
+	 *
+	 * @param dname
+	 *             the new directory's name
+	 *
+	 * @param dir
+	 *             the directory to put the directory in
+	 *
+	 * @param user
+	 *             the user requesting the operation
+	 * 
+	 * @param privacy
+	 *             the directory's public or private attribute
+	 */
+	public void newDirectory(String dname, Directory dir, User user, boolean privacy) throws CoreEntryExistsException, CoreAccessDeniedException { 
+	   try { 
+	      if (!(dir.checkOwner(".", user)))
+	         throw new CoreAccessDeniedException(user.getUname());
+	      else 
+	         dir.addEntry(new Directory(dname, dir, user, privacy));
+	   }
+	   catch (CoreEntryUnknownException e) { 
+         // never actually happens
+	      e.printStackTrace();
+	   }
+	}
+	
+   /**
+    * Get the complete path of a directory
+    *
+	 * @param dir
+	 *             the directory to get the path from
+	 *
+	 * @return the corresponding path            
+	 */
+	 public String getPath(Directory dir) { 
+	   return dir.getPath();
+	 }
+	
+	/**
+	 * Add content to a file
+	 *
+	 * @param content
+	 *             the string to write
+	 *
+	 * @param fname
+	 *             the name of the file to write to
+	 *
+	 * @param dir
+	 *             the directory containing the file
+	 *
+	 * @param user
+	 *             the user requesting the operation            
+	 */
+	public void writeToFile(String content, String fname, Directory dir, User user) throws CoreEntryUnknownException, CoreIsNotFileException, CoreAccessDeniedException {
+	   if (!(dir.checkOwner(fname, user)))
+	      throw new CoreAccessDeniedException(user.getUname());
+	   else
+	      dir.addFileContent(fname, content);
+	}
+	
+	/**
+	 * @param fname
+	 *             the name of the file to read from
+	 *
+	 * @param dir
+	 *             the directory containing the file
+	 *
+	 * @return the file's content
+	 */
+	public String readFromFile(String fname, Directory dir) throws CoreEntryUnknownException, CoreIsNotFileException {
+	   return dir.getFileContent(fname);
+	}
+	
+	/**
+	 * Change an entry's privacy
+	 *
+	 * @param ename
+	 *             the entry's name
+	 *
+	 * @param privacy
+	 *             the privacy to set to the entry
+	 *
+	 * @param dir
+	 *             the directory containing the entry
+	 *
+	 * @param user
+	 *             the user requesting the operation
+	 *           
+	 */
+	public void changePrivacy(String ename, boolean privacy, Directory dir, User user) throws CoreEntryUnknownException, CoreAccessDeniedException { 
+	   if (!(user.isRoot() || user.equals(dir.getEntry(ename).getOwner())))
+	      throw new CoreAccessDeniedException(user.getUname());
+	   else
+	      dir.setEntryPrivacy(ename, privacy);
+	}
+	
+	
+	/**
+	 * Change an entry's owner
+	 *
+	 * @param ename
+	 *             the entry's name
+	 *
+	 * @param newowner
+	 *             the entry's new owner
+	 *
+	 * @param dir
+	 *             the directory containing the entry
+	 *
+	 * @param user
+	 *             the user requesting the operation
+	 */
+	public void changeOwner(String ename, String newowner, Directory dir, User user) throws CoreEntryUnknownException, CoreAccessDeniedException, CoreUserUnknownException { 
+	   if (!(user.isRoot() || user.equals(dir.getEntry(ename).getOwner())))
+	      throw new CoreAccessDeniedException(user.getUname());
+	   else
+	      dir.setEntryOwner(ename, getUser(newowner));
+	}
+	
+	/**
+	 * @return the file system's users, ordered by username            
+	 */
+	public String listUsers() { 
+	   String list = "";
+	   for (User u: getAll())
+	      list += u.getInfo() + "\n";
+	   return list.substring(0, list.length()-1);
+	}
+	
+}

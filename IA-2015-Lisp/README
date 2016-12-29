@@ -1,0 +1,9 @@
+ executar 'clisp' na linha de comandos, se não tiver instalado fazer 'sudo apt-get install clisp'
+ para correr o interpretador basta 'clisp'
+ para compilar 'clisp -c proj.lisp'
+ para sair (ext:quit)
+ para importar o ficheiro (load 'proj.lisp) (assim deve fazer com o interpretador)
+ para importar o ficheiro compilado (load 'proj.fas)
+ 
+ ENUNCIADO: https://fenix.tecnico.ulisboa.pt/downloadFile/1970943312265548/enunciado-projecto-IA-tetris.pdf
+ MANUAL: http://www.lispworks.com/documentation/HyperSpec/Front/

@@ -1,0 +1,20 @@
+Relatório PO
+Aspectos relevantes no desenvolvimento do diagrama UML:
+
+1. Os métodos da classe FileSystem são semelhantes a alguns dos métodos da classe Manager, que essencialmente chamam os métodos equivalentes do FileSystem, para permitir que o Manager funcione como "interface" entre o core e o textui. Os métodos têm, por isso, que passar um ou dois argumentos adicionais aos métodos do FileSystem (a directoria actual e/ou o utilizador actual).
+
+2. Os métodos responsáveis pelo output de dados vão tratar desse output no corpo do próprio método, pelo que o seu tipo de retorno vai ser void e não String.
+
+3. O directório _init da classe FileSystem vai ser a raíz dos restantes directórios, ou seja, a base do sistema de ficheiros.
+
+4. A classe Root foi criada de forma a distinguir o utilizador root dos restantes, visto que tem maior liberdade para alterar o conteúdo do sistema de ficheiros.
+
+5. A classe Entry tem um atributo do tipo boolean (_privacy) que determina as suas permissões de escrita, tendo o valor True quando é pública e False quando privada.
+
+7. As entradas têm também um atributo do tipo Directory (_parent) que identifica o directório onde estão armazenadas. Apesar deste aspecto não ser estritamente necessário na subclasse File, considerámos que estando na classe Entry contribuiria para a flexibilidade do projecto.
+
+8. Na implementação da funcionalidade total do projecto vão ser usados os getters e setters apropriados para cada classe, apesar de estarem omitidos no diagrama UML. 
+
+9. O método getSize() da classe Entry é abstracto e é redefinido em cada uma das subclasses, já que o cálculo do tamanho de um ficheiro é diferente do cálculo do tamanho de um directório.
+
+10. Quando passados como argumentos de métodos, os nomes (Strings) de instâncias das classes são identificados pelas suas iniciais (e.g., "fsname" diz respeito ao nome de uma instância da classe FileSystem).
