@@ -1,0 +1,1772 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="stylesheets/slick.css"/>
+		<link rel="stylesheet" href="stylesheets/slick-theme.css"/>
+		<link rel="stylesheet" href="stylesheets/lanterna.css"/>
+
+		<link href="stylesheets/irave_css.css" rel="stylesheet"/>
+		<script type="text/javascript" src="scripts/shortcut.js"></script>
+		<script type="text/javascript" src="scripts/irave_js.js"></script>
+	</head>
+
+	<body onLoad="start()">
+		<div id="top" style="width:0.23in;height:0.15in;position:absolute;left:0.7in;top:0.11in;z-index:100"><img height="100%" width="100%" src="images/cam+flash.png"/></div>
+		<div id="top2" style="width:0.15in;height:0.15in;position:absolute;left:0.27in;top:0.11in;z-index:100;visibility:hidden;"><img height="100%" width="100%" src="images/led.gif"/></div>
+		<div id="iRave">
+			
+			
+			<!--            MENU PRINCIPAL         -->
+			
+			
+			
+			<div id="slick_lockscreen" class="slick">
+				<div id="lockscreen" class="caixa">
+					<br/>
+					<div style="text-align: center; width:100%; font-size: 0.3in; font-weight: 400; margin:auto;" class="hora"></div>
+					<div style="width:90%; margin:auto;"><img style="width:100%"src="images/lockscreen.gif"/></div>
+					<div class="txt">Deslize para desbloquear</div>
+				</div>
+				<div class="caixa"></div>
+			</div>
+			<div id="slick_principal" class="slick">
+				<div id="principal1" class="caixa">	
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Menu Principal</div>
+					</div>
+					<div class="corpo">
+						<div id="menu_principal_notificacoes" class="menu" info="Ver alertas do sistema" style="position:relative">
+							<div class="img"><img src="images/notificacoes.png"/></div>
+							<div class="legenda">Alertas</div>
+							<div class="nalertas"></div>
+						</div>
+						<div id="menu_multimedia_galeria" class="menu" info="Ver, remover ou partilhar fotos">
+							<div class="img"><img src="images/galeria.png"/></div>
+							<div class="legenda">Album</div>
+						</div>
+						<div id="menu_principal_amigos" class="menu" info="Interagir ou adicionar amigos">
+							<div class="img"><img src="images/amigos.png"/></div>
+							<div class="legenda">Amigos</div>
+						</div>
+						<div id="menu_multimedia_camara" class="menu" info="Tirar fotografias">
+							<div class="img"><img src="images/camara.png"/></div>
+							<div class="legenda">Camara</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+
+				<div id="principal2" class="caixa">	
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Menu Principal</div>
+					</div>
+					<div class="corpo">
+						<div id="menu_principal_comida" class="menu" info="Encomendar comida das lojas no recinto">
+							<div  class="img"><img src="images/comida.png"/></div>
+							<div class="legenda">Comida</div>
+						</div>
+						<div id="menu_principal_concertos" class="menu" info="Informações do concerto e (des)ativar a lanterna">
+							<div class="img"><img src="images/concertos.png"/></div>
+							<div class="legenda">Concertos</div>
+						</div>
+						<div id="menu_principal_diversoes" class="menu" info="Tirar senha para as diversões no recinto">
+							<div class="img"><img src="images/diversoes.png"/></div>
+							<div class="legenda">Diversões</div>
+						</div>
+						<div id="menu_principal_mapa" class="menu" info="Direções para locais no recinto e seus amigos">
+							<div class="img"><img src="images/mapa.png"/></div>
+							<div class="legenda">Mapa</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			<!--            AJUDA         -->
+			
+			
+			<div id="ajuda" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Ajuda</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_ajuda_botoes">Botões Externos</li>
+						<li class="vai_ajuda_leds">Leds e luzes</li>
+						<li class="vai_ajuda_setas">Setas</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="slick_ajuda_setas" class="slick">
+				<div id="ajuda_setas" class="caixa" style="position:relative">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Ajuda</div>
+					</div>
+					<div class="corpo">
+						<div class="txt">Deslize para mudar de ecrã</div>
+						<div style="text-align:center;width:76%;position:absolute;top:43%;border:0.03in solid green;padding:2%;padding-right:18%;">Ecrã à direita</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+				
+				<div id="ajuda_setas" class="caixa" style="position:relative">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Ajuda</div>
+					</div>
+					<div class="corpo">
+						<div class="txt">Deslize para mudar de ecrã</div>
+						<div style="text-align:center;width:60%;position:absolute;top:43%;border:0.03in solid green;padding:2%;padding-right:18%;padding-left:18%;">Ecrãs à direita e à esquerda</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+				
+				<div id="ajuda_setas" class="caixa" style="position:relative">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Ajuda</div>
+					</div>
+					<div class="corpo">
+						<div class="txt">Deslize para mudar de ecrã</div>
+						<div style="text-align:center;width:76%;position:absolute;top:43%;border:0.03in solid green;padding:2%;padding-left:18%;">Ecrãs à esquerda</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="ajuda_leds" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Ajuda</div>
+				</div>
+				<div class="corpo">
+					<div style="font-size: 0.2in; display:inline-block" >&#8679;&#9312;</div>
+					<div style="font-size: 0.2in; display:inline-block" >&#8679;&#9313;</div>
+					<div>
+					<div style="font-size: 0.2in; display:inline-block; float: left;">&#9312;</div><div style="display:inline-block; width: 80%;">O LED fica intermitente se existirem notificações</div><div style="font-size: 0.2in; display:inline-block; float: left;">&#9313;</div><div style="display:inline-block; width: 80%;">Camara e Lanterna</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="ajuda_botoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Ajuda</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Botões Externos</div>
+					<ul class="lista">
+						<li><div><img src="images/back.png"/></div><div>Voltar para trás</div></li>
+						<li><div><img src="images/home.png"/></div><div>Voltar para o Menu Principal</div></li>
+						<li><div><img src="images/lock.png"/></div><div>Bloquear e desbloquear</div></li>
+						<li><div>?</div><div>Ajuda</div></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="slick_ajuda_menus" class="slick">
+				<div id="ajuda_menus" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Ajuda</div>
+					</div>
+					<div class="corpo"></div>
+				</div>
+			</div>
+			
+			
+			
+			<!--            AMIGOS         -->
+			
+			
+			
+			
+			<div id="amigos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Amigos</div>
+				</div>
+				<div class="corpo">
+					<div id="menu_amigos_lista" class="menu" info="Ver, remover ou mandar toques aos seus amigos">
+						<div class="img"><img src="images/lista_amigos.png"/></div>
+						<div class="legenda">Ver Lista</div>
+					</div>
+					<div id="menu_amigos_adicionar" class="menu" info="Adicionar amigos pelo iRave">
+						<div class="img"><img src="images/add_amigos.png"/></div>
+						<div class="legenda">Adicionar</div>
+					</div>
+					<div id="menu_amigos_toque" class="menu" info="Mandar toques aos seus amigos">
+						<div class="img"><img src="images/toque_amigos.png"/></div>
+						<div class="legenda">Toque</div>
+					</div>
+					<div id="menu_amigos_sugerir" class="menu" info="iRave sugere-lhe amigos para adicionar">
+						<div  class="img"><img src="images/sugerir_amigos.png"/></div>
+						<div class="legenda">Sugerir</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="amigos_adicionar" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Adicionar</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">Por favor aproxime o iRave do iRave da pessoa que quer adicionar</div>
+				</div>
+			</div>
+			
+			<div id="amigos_adicionar1" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Adicionar</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt">"Eduardo" foi removido da sua lista. Quer adicioná-lo?</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 verde">Sim</div>
+					<div class="nao vermelho">Não</div>
+				</div>
+			</div>
+			
+			<div id="amigos_adicionar2" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Adicionar</div>
+				</div>
+				<div class="corpo perfil com_footer">
+					<div>Eduardo, 20</div>
+					<div><img src="images/ed.gif"/></div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Adicionar</div>
+				</div>
+			</div>
+			
+			<div id="amigos_adicionar3" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Adicionar</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt">Já tem "Eduardo" como amigo.</div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Voltar ao menu</div>
+				</div>
+			</div>
+			
+			<div id="slick_lista" class="slick">
+				<div class="caixa amigo">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Lista amigos</div>
+					</div>
+					<div class="corpo perfil com_footer">
+						<div>Ana Malhoa</div>
+						<div><img src="images/ana_malhoa.gif"/></div>
+					</div>
+					<div class="footer">
+						<div class="outros vermelho">Remover</div>
+						<div class="sim2 verde">Toque</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="slick_toque" class="slick">
+				<div class="caixa amigo">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Toque</div>
+					</div>
+					<div class="corpo perfil com_footer">
+						<div>Ana Malhoa</div>
+						<div><img src="images/ana_malhoa.gif"/></div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Enviar toque</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="slick_sugerir" class="slick">
+				<div class="caixa desconhecido">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Sugerir</div>
+					</div>
+					<div class="corpo perfil com_footer">
+						<div>Daniel, 20</div>
+						<div><img src="images/daniel.gif"/></div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Adicionar</div>
+					</div>
+				</div>
+				<div class="caixa"></div>
+				
+				<div class="caixa desconhecido">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Sugerir</div>
+					</div>
+					<div class="corpo perfil com_footer">
+						<div>Francisco, 20</div>
+						<div><img src="images/chico.gif"/></div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Adicionar</div>
+					</div>
+				</div>
+
+				<div class="caixa"></div>
+				<div class="caixa desconhecido">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Sugerir</div>
+					</div>
+					<div class="corpo perfil com_footer">
+						<div>Rui, 20</div>
+						<div><img src="images/rui.gif"/></div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Adicionar</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div id="amigos_sugerir_verificação" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sugerir</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt">Deseja alterar as suas preferências?</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 vermelho">Sim</div>
+					<div class="nao verde">Não</div>
+				</div>
+			</div>
+			
+			<div id="amigos_sugerir0" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sugerir</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt">Responda às seguintes questões</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 verde">Avançar</div>
+					<div class="nao vermelho">Cancelar</div>
+				</div>
+			</div>
+			
+			<div id="amigos_sugerir1" class="caixa preferencias">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sugerir</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="instrucao">Selecione o seu artista favorito</div>
+					<div class="lista touchable">
+						<ul>
+							<li>Ana Malhoa</li>
+							<li>Boss AC</li>
+							<li>Da Weasel</li>
+							<li>David Carreira</li>
+							<li>Mickael Carreira</li>
+							<li>Mind Da Gap</li>
+							<li>Quim Barreiros</li>
+							<li>Romana</li>
+							<li>Tony Carreira</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="nao vermelho">Cancelar</div>
+					<div class="sim2">Avançar</div>
+				</div>
+			</div>
+			
+			<div id="amigos_sugerir2" class="caixa preferencias">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sugerir</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="instrucao">Selecione o seu objetivo no festival</div>
+					<div class="lista touchable">
+						<ul>
+							<li>Conhecer pessoas</li>
+							<li>Ouvir música</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="nao vermelho">Cancelar</div>
+					<div class="sim2">Avançar</div>
+				</div>
+			</div>	
+			<div id="amigos_verificacao" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+				</div>
+				<div class="corpo com_footer">	
+					<div class="txt">Tem a certeza que quer remover o seu amigo(a)?</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 vermelho">Sim</div>
+					<div class="outros verde">Não</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            COMIDA         -->
+			
+			
+			
+			
+			<div id="comida" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Comida</div>
+				</div>
+				<div class="corpo">
+					<div id="menu_comida_lojas" class="menu" info="Encomendar comida das lojas no recinto">
+						<div class="img"><img src="images/storefront.png"/></div>
+						<div class="legenda">Lojas</div>
+					</div>
+					<div id="menu_comida_pedidos" class="menu" info="Ver os pedidos que já foram feitos">
+						<div class="img"><img src="images/tickets-icon.png"/></div>
+						<div class="legenda">Pedidos</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="comida_lojas" class="caixa">
+			<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Lojas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li id="comida_lojas_ze">Bifas do Zé</li>
+						<li id="comida_lojas_pombo">Pombo Social</li>
+						<li id="comida_lojas_monica">Tostas da Mónica</li>
+					</ul>
+				</div>
+			</div>
+
+		   <div id="lojas_ze" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Bifas do Zé</div>
+
+				</div>
+
+				<div class="corpo">
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/bifas1.jpg"/></div></div>
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/bifas2.jpg"/></div></div>
+					<div id="lojas_ze_direcoes" class="menu" info="Ver direções para o(a) <i>Zé das Bifas</i>">
+						<div class="img"><img src="images/mapa.png"/></div>
+						<div class="legenda">Direções</div>
+					</div>
+					<div id="lojas_ze_encomendar" class="menu" info="Fazer encomendas do(a) <i>Zé das Bifas</i>">
+						<div class="img"><img src="images/encomendar.png"/></div>
+						<div class="legenda">Pedir</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="ze_encomendar" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Encomendar</div>
+				</div>
+				<div class="corpo">
+					<div id="ze_encomendar_bebidas" class="menu" info="Encomendar bebidas">
+						<div class="img"><img src="images/bebidas2.png"/></div>
+						<div class="legenda">Bebidas</div>
+					</div>
+					<div id="ze_encomendar_bifanas" class="menu" info="Encomendar bifas">
+						<div class="img"><img src="images/bifanas.png"/></div>
+						<div class="legenda">Bifas</div>
+					</div>
+					<div id="ze_encomendar_cafes" class="menu" info="Encomendar doces">
+						<div class="img"><img src="images/doces.png"/></div>
+						<div class="legenda">Doces</div>
+					</div>
+					<div id="ze_encomendar_extras" class="menu" info="Encomendar extras">
+						<div  class="img"><img src="images/extras.png"/></div>
+						<div class="legenda">Extras</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="ze_bebidas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Bebidas</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="ze_bebida_agua" name="Água" n="0" price="0.6"></li>
+						<li id="ze_bebida_coca" name="Coca Cola" n="0" price="1"></li>
+						<li id="ze_bebida_icetea" name="Ice Tea" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+			<div id="ze_extras" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Extras</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="ze_extras_ketchup" name="Ketchup" n="0" price="0.4"></li>
+						<li id="ze_extras_maionese" name="Maionese" n="0" price="0.4"></li>
+						<li id="ze_extras_mostarda" name="Mostarda" n="0" price="0.4"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+
+			<div id="ze_bifanas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Bifas</div>
+
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="ze_bifas_mostarda" name="Bifa do Zé" n="0" price="1"></li>
+						<li id="ze_bifas_ovo" name="Bifa com Ovo" n="0" price="1"></li>
+						<li id="ze_bifas_ketchup" name="Bifa Especial" n="0" price="1" ></li>
+						<li id="ze_bifas_maionese" name="Bifa Simples" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+
+			<div id="ze_cafes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Doces</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="ze_doce_arroz" name="Arroz Doce" n="0" price="1"></li>
+						<li id="ze_bebida_cafe" name="Semifrio" n="0" price="1.5"></li>
+						<li id="ze_doce_pudim" name="Pudim" n="0" price="1"></li>
+
+					</ul>
+				</div>
+				
+			</div>
+			
+			<div id="ze_direcoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Direções</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+
+		   <div id="lojas_monica" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Tostas da Mónica</div>
+				</div>
+				<div class="corpo">
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/tostasMonica1.jpg"/></div></div>
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/tostasMonica2.jpg"/></div></div>
+					<div id="lojas_monica_direcoes" class="menu" info="Ver direções para o(a) <i>Tostas da Mónica</i>">
+						<div class="img"><img src="images/mapa.png"/></div>
+						<div class="legenda">Direções</div>
+					</div>
+					<div id="lojas_monica_encomendar" class="menu" info="Fazer encomendas do(a) <i>Tostas da Mónica</i>">
+						<div class="img"><img src="images/encomendar.png"/></div>
+						<div class="legenda">Pedir</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="monica_encomendar" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Encomendar</div>
+				</div>
+				<div class="corpo">
+					<div id="monica_encomendar_batidos" class="menu" info="Encomendar batidos">
+						<div class="img"><img src="images/batidos.png"/></div>
+						<div class="legenda">Batidos</div>
+					</div>
+					<div id="monica_encomendar_bebidas" class="menu" info="Encomendar bebidas">
+						<div class="img"><img src="images/bebidas2.png"/></div>
+						<div class="legenda">Bebidas</div>
+					</div>
+					<div id="monica_encomendar_cafes" class="menu" info="Encomendar doces">
+						<div class="img"><img src="images/doces.png"/></div>
+						<div class="legenda">Doces</div>
+					</div>
+					<div id="monica_encomendar_tostas" class="menu" info="Encomendar tostas">
+						<div  class="img"><img src="images/tostas.png"/></div>
+						<div class="legenda">Tostas</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="monica_bebidas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Bebidas</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="monica_bebida_agua" name="Água" n="0" price="0.6"></li>
+						<li id="monica_bebida_coca" name="Coca Cola" n="0" price="1"></li>
+						<li id="monica_bebida_icetea" name="Ice Tea" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+			<div id="monica_batidos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Batidos</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="monica_batidos_banana" name="Batido de Morango e Banana" n="0" price="1"></li>
+						<li id="monica_batidos_marshmallow" name="Batido de Marshmallow" n="0" price="1"></li>
+						<li id="monica_batidos_morango" name="Batido de Morango" n="0" price="1"></li>
+						<li id="monica_batidos_choco" name="Choco-Batido" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+
+			<div id="monica_tostas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Tostas</div>
+
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="monica_tostas_queijo" name="Tosta Mónica" n="0" price="1"></li>
+						<li id="monica_tostas_bacon" name="Tosta Bacon" n="0" price="1"></li>
+						<li id="monica_tostas_queijo" name="Tosta Queijo" n="0" price="1" ></li>
+						<li id="monica_tostas_mista" name="Tosta Mista" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+
+			<div id="monica_cafes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Doces</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="monica_doce_arroz" name="Arroz Doce" n="0" price="1"></li>
+						<li id="monica_bebida_cafe" name="Semifrio" n="0" price="1.5"></li>
+						<li id="monica_doce_pudim" name="Pudim" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+			
+			<div id="monica_direcoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Direções</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="lojas_pombo" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Pombo Social</div>
+				</div>
+				<div class="corpo">
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/pomboSocial1.jpg"/></div></div>
+					<div class="menu" info=""><div class="img sem_legenda"><img src="images/pomboSocial2.jpg"/></div></div>
+					<div id="lojas_pombo_direcoes" class="menu" info="Ver direções para o(a) <i>Pombo Social</i>">
+						<div class="img"><img src="images/mapa.png"/></div>
+						<div class="legenda">Direções</div>
+					</div>
+					<div id="lojas_pombo_encomendar" class="menu" info="Fazer encomendas do(a) <i>Pombo Social</i>">
+						<div class="img"><img src="images/encomendar.png"/></div>
+						<div class="legenda">Pedir</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="pombo_encomendar" class="caixa">	
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Encomendar</div>
+				</div>
+				<div class="corpo">
+					<div id="pombo_encomendar_aperitivos" class="menu" info="Encomendar aperitivos">
+						<div  class="img"><img src="images/aperitivos.png"/></div>
+						<div class="legenda">Aperitivos</div>
+					</div>
+					<div id="pombo_encomendar_baguetes" class="menu" info="Encomendar baguetes">
+						<div class="img"><img src="images/Bagete.png"/></div>
+						<div class="legenda">Baguetes</div>
+					</div>
+					<div id="pombo_encomendar_bebidas" class="menu" info="Encomendar bebidas">
+						<div class="img"><img src="images/bebidas2.png"/></div>
+						<div class="legenda">Bebidas</div>
+					</div>
+					<div id="pombo_encomendar_sopas" class="menu" info="Encomendar sopas">
+						<div class="img"><img src="images/sopas.png"/></div>
+						<div class="legenda">Sopas</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="pombo_bebidas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Bebidas</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="pombo_bebida_agua" name="Água" n="0" price="0.6"></li>
+						<li id="pombo_bebida_coca" name="Coca Cola" n="0" price="1"></li>
+						<li id="pombo_bebida_icetea" name="Ice Tea" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+			<div id="pombo_baguetes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Baguetes</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="pombo_baguetes_atum" name="Baguete de delicias do mar" n="0" price="1"></li>
+						<li id="pombo_baguetes_ovo" name="Baguete de panado" n="0" price="1"></li>
+						<li id="pombo_baguetes_carne" name="Baguete de carne assada" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+
+			<div id="pombo_aperitivos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Tostas</div>
+
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="pombo_aperitivos_alho" name="Pão de alho" n="0" price="1"></li>
+						<li id="pombo_aperitivos_batata" name="Batata frita" n="0" price="1" ></li>
+						<li id="pombo_aperitivos_caracois" name="Caracóis" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<div id="pombo_sopas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sopas</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o(s) produto(s):</div>
+					<ul class="lista_precos touchable">
+						<li id="pombo_sopas_caldo" name="Caldo Verde" n="0" price="1"></li>
+						<li id="pombo_sopas_canja" name="Canja" n="0" price="0.5"></li>
+						<li id="pombo_sopas_peixe" name="Sopa de peixe" n="0" price="1"></li>
+					</ul>
+				</div>
+				
+			</div>
+			
+			<div id="pombo_direcoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Direções</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div id="verificacao" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Finalizar</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li id="verificacao_mais">Adicionar mais produtos</li>
+						<li id="verificacao_fim">Finalizar encomenda</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="entrega" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Finalizar</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o tipo de entrega:</div>
+					<ul class="lista touchable">
+						<li class="entrega">Levantar na Loja</li>
+						<li class="entrega">Drone</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="pagamento" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Finalizar</div>
+				</div>
+				<div class="corpo">
+					<div class="instrucao">Selecione o meio de pagamento:</div>
+					<ul class="lista touchable">
+						<li class="pagamento">Dinheiro</li>
+						<li class="pagamento">Multibanco</li>
+						<li class="pagamento">iRave</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="recibo" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Recibo</div>
+				</div>
+				<div class="corpo com_footer">
+					<ul class="lista_final">
+						<li id="total">Total <span style="float:right">€</span><span class="tt" style="float:right">0</span></li>
+					</ul>
+				</div>
+				<div class="footer">
+					<div class="sim2 verde">Pagar</div>
+					<div class="nao vermelho">Cancelar</div>
+				</div>
+			</div>
+
+			<div id="comida_pedidos" class="caixa" n="0">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Pedidos</div>
+
+				</div>
+				<div class="corpo">
+					<ul class="lista">
+						<li>Sem pedidos</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            CONCERTOS         -->
+			
+			
+			
+			
+			<div id="concertos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Concertos</div>
+				</div>
+				<div class="corpo">
+					<div id="menu_concertos_artistas" class="menu" info="Ver os artistas e músicas que vão tocar">
+						<div class="img"><img src="images/artistas_concertos.png"/></div>
+						<div class="legenda">Artistas</div>
+					</div>
+					<div id="menu_concertos_tocar" class="menu" info="Ver quem e o que estão a tocar de momento">
+						<div class="img"><img src="images/musica.png"/></div>
+						<div class="legenda">A Tocar</div>
+					</div>
+					<div id="menu_concertos_cartaz" class="menu" info="Ver o alinhamento dos artistas nos palcos">
+						<div class="img"><img src="images/cartaz_concertos.png"/></div>
+						<div class="legenda">Cartaz</div>
+					</div>
+					<div id="menu_concertos_lanterna" class="menu" info="Acender ou desligar a lanterna">
+						<div class="img"><img src="images/lanterna_concertos.png"/></div>
+						<div class="legenda">Lanterna</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="slick_artistas" class="slick">
+				<div id="concertos_palco00" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>David Carreira</div>
+							<div><img src="images/david_carreira.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco01" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Mickael Carreira</div>
+							<div><img src="images/mickael_carreira.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco02" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Tony Carreira</div>
+							<div><img src="images/tony_carreira.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco10" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Ana Malhoa</div>
+							<div><img src="images/ana_malhoa.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco11" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Quim Barreiros</div>
+							<div><img src="images/quim_barreiros.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco12" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Romana</div>
+							<div><img src="images/romana.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco20" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Boss AC</div>
+							<div><img src="images/boss_ac.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco21" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Da Weasel</div>
+							<div><img src="images/da_weasel.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+				
+				<div class="caixa"></div>
+			
+				<div id="concertos_palco22" class="caixa">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Artistas</div>
+					</div>
+					<div class="corpo com_footer">
+						<div class="perfil">
+							<div>Mind Da Gap</div>
+							<div><img src="images/mind_da_gap.gif"/></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="sim verde">Ver Musicas</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="concertos_palco00_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="David Carreira" time="1920" name="Boom"></li>
+						<li band="David Carreira" time="1940" name="ABC"></li>
+						<li band="David Carreira" time="2000" name="És tu"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco01_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Mickael Carreira" time="2020" name="Baila p'ra mim"></li>
+						<li band="Mickael Carreira" time="2040" name="Um anjo como tu"></li>
+						<li band="Mickael Carreira" time="2100" name="Sem ti"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco02_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Tony Carreira" time="2120" name="Depois de ti"></li>
+						<li band="Tony Carreira" time="2140" name="Sabes onde estou"></li>
+						<li band="Tony Carreira" time="2200" name="Sonhos de menino"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco10_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Ana Malhoa" time="1920" name="Bomba latina"></li>
+						<li band="Ana Malhoa" time="1940" name="Encaixa"></li>
+						<li band="Ana Malhoa" time="2000" name="'Tá turbinada"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco11_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Quim Barreiros" time="2020" name="A cabritinha"></li>
+						<li band="Quim Barreiros" time="2040" name="Mestre de culinária"></li>
+						<li band="Quim Barreiros" time="2100" name="Bacalhau à portuguesa"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco12_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Romana" time="2120" name="Foi Deus"></li>
+						<li band="Romana" time="2140" name="Adiça"></li>
+						<li band="Romana" time="2200" name="Mãe Preta"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco20_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Boss AC" time="1920" name="Sexta-feira"></li>
+						<li band="Boss AC" time="1940" name="Anda cá ao papá"></li>
+						<li band="Boss AC" time="2000" name="Boa vibe"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco21_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Da Weasel" time="2020" name="Dialetos de ternura"></li>
+						<li band="Da Weasel" time="2040" name="Re-tratamento"></li>
+						<li band="Da Weasel" time="2100" name="Tás na boa"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_palco22_musica" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Musicas</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista musica">
+						<li band="Mind da Gap" time="2120" name="A essência"></li>
+						<li band="Mind da Gap" time="2140" name="Este beat"></li>
+						<li band="Mind da Gap" time="2200" name="Falsos amigos"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_tocar_palco0" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">A Tocar</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt"></div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Outros Palcos</div>
+				</div>
+			</div>
+			
+			<div id="concertos_tocar_palco1" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">A Tocar</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt"></div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Outros Palcos</div>
+				</div>
+			</div>
+			
+			<div id="concertos_tocar_palco2" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">A Tocar</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt"></div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Outros Palcos</div>
+				</div>
+			</div>
+			
+			<div id="concertos_tocar_palcos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">A Tocar</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li id="vai_concertos_tocar_palco0">Palco Principal</li>
+						<li id="vai_concertos_tocar_palco1">Palco Pimba</li>
+						<li id="vai_concertos_tocar_palco2">Palco Rap</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_cartaz" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Cartaz</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li id="vai_concertos_cartaz_palco0">Palco Principal</li>
+						<li id="vai_concertos_cartaz_palco1">Palco Pimba</li>
+						<li id="vai_concertos_cartaz_palco2">Palco Rap</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_cartaz_palco0" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Palco Principal</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista">
+						<li>19h: David Carreira</li>
+						<li>20h: Mickael Carreira</li>
+						<li>21h: Tony Carreira</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_cartaz_palco1" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Palco Pimba</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista">
+						<li>19h: Ana Malhoa</li>
+						<li>20h: Quim Barreiros</li>
+						<li>21h: Romana</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_cartaz_palco2" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Palco Rap</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista">
+						<li>19h: Boss AC</li>
+						<li>20h: Da Weasel</li>
+						<li>21h: Mind Da Gap</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="concertos_lanterna" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Lanterna</div>
+				</div>
+				<div class="corpo">
+					<br/>
+					<br/>
+					<div class="onoffswitch">
+						<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+						<label class="onoffswitch-label" for="myonoffswitch">
+							<span class="onoffswitch-inner">
+								<span class="onoffswitch-active"><span class="onoffswitch-switch">ON</span></span>
+								<span class="onoffswitch-inactive"><span class="onoffswitch-switch">OFF</span></span>
+							</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            DIVERSOES         -->
+			
+			
+			
+			
+			<div id="diversoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Diversões</div>
+				</div>
+				<div class="corpo">
+					<div id="menu_diversoes_filas" class="menu" info="Ver o tamanho das filas nas diversões">
+						<div class="img"><img src="images/filas.png"/></div>
+						<div class="legenda">Filas</div>
+					</div>
+					<div id="menu_diversoes_pedidos" class="menu" info="Ver as senhas que já foram tiradas">
+						<div class="img"><img src="images/tickets-icon.png"/></div>
+						<div class="legenda">Senhas</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="diversoes_filas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_diversoes_tempo">Roda Gigante</li>
+						<li class="vai_diversoes_tempo">Montanha Russa</li>
+						<li class="vai_diversoes_tempo">Rappel</li>
+						<li class="vai_diversoes_tempo">Splash</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="mostra_diversoes_tempo" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+				</div>
+				<div class="corpo com_footer">	
+					<div class="txt">Tempo previsto na fila:<br/>5 min</div>
+				</div>
+				<div class="footer">
+					<div class="sim verde">Tirar Senha</div>
+				</div>
+			</div>
+			
+			<div id="diversoes_pedidos" class="caixa" n="0">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Pedidos</div>
+
+				</div>
+				<div class="corpo">
+					<ul class="lista">
+						<li>Sem pedidos</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            MAPA         -->
+			
+			
+			
+			
+			<div id="mapa" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<div id="menu_mapa_lojas" class="menu" info="Ver direções para as lojas">
+						<div class="img"><img src="images/storefront.png"/></div>
+						<div class="legenda">Lojas</div>
+					</div>
+					<div id="menu_mapa_amigos" class="menu" info="Ver direções para os seus amigos">
+						<div class="img"><img src="images/amigos.png"/></div>
+						<div class="legenda">Amigos</div>
+					</div>
+					<div id="menu_mapa_palcos" class="menu" info="Ver direções para os palcos">
+						<div class="img"><img src="images/palcos_concertos.png"/></div>
+						<div class="legenda">Palcos</div>
+					</div>
+					<div id="menu_mapa_diversoes" class="menu" info="Ver direções para as diversões">
+						<div class="img"><img src="images/diversoes.png"/></div>
+						<div class="legenda">Diversões</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="mapa_diversoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_mapa_diversoes">Roda Gigante</li>
+						<li class="vai_mapa_diversoes">Montanha Russa</li>
+						<li class="vai_mapa_diversoes">Rappel</li>
+						<li class="vai_mapa_diversoes">Splash</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="mapa_lojas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_mapa_lojas">Bifas do Zé</li>
+						<li class="vai_mapa_lojas">Pombo Social</li>
+						<li class="vai_mapa_lojas">Tostas da Mónica</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="mapa_palcos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_mapa_palcos">Palco Principal</li>
+						<li class="vai_mapa_palcos">Palco Pimba</li>
+						<li class="vai_mapa_palcos">Palco Rap</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="mapa_amigos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="vai_mapa_amigos">Ana Malhoa</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="mostra_mapa_amigos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="mostra_mapa_diversoes" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="mostra_mapa_palcos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="mostra_mapa_lojas" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Mapa</div>
+				</div>
+				<div class="corpo">
+					<div class="txt">
+						<div class="mapa_arrow_container"><div class="mapa_arrow"></div></div>
+						<div class="mapa_dist">100 metros</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            MULTIMEDIA         -->
+			
+			
+			
+			
+			<div id="multimedia_camara" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Camara</div>
+				</div>
+				<div class="corpo">
+					<div style="width:1.06in; height: 0.62in; margin:auto"><img style="width:100%; height:100%" src="images/702814d3.jpg"/></div>
+					<div style="height:27%; width:24%; margin:auto; margin-top: 3%;">
+						<div class="icon_camera">
+						  <div class="icon_camera_button"></div>
+						  <div class="icon_camera_body"></div>
+						  <div class="icon_camera_cannon"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="multimedia_camara1" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Camara</div>
+				</div>
+				<div class="corpo com_footer">
+					<div style="width:1.06in; height: 0.62in; margin:auto"><img style="width:100%; height:100%" src="images/702814d3.jpg"/></div>
+				</div>
+				<div class="footer">
+					<div class="sim2 verde">Guardar</div>
+					<div class="nao vermelho">Apagar</div>
+				</div>
+			</div>
+			
+			<div id="multimedia_camara2" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Camara</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li id="vai_multimedia_camara">Tirar outra fotografia</li>
+						<li id="vai_multimedia_camara3">Partilhar fotografia</li>
+						<li id="vai_multimedia">Voltar para o menu</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="multimedia_camara3" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Camara</div>
+				</div>
+				<div class="corpo">
+					<ul class="lista touchable">
+						<li class="multimedia_partilha">Facebook</li>
+						<li class="multimedia_partilha">Instagram</li>
+						<li class="multimedia_partilha">Twitter</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="slick_galeria" class="slick">
+				<div class="caixa galeria sem_fotos">
+					<div class="header">
+						<div class="hora"></div>
+						<div class="localizacao">Album</div>
+					</div>
+					<div class="corpo">
+						<div style="text-align:center; width:100%">Não tem fotos</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="multimedia_verificacao" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Sugerir</div>
+				</div>
+				<div class="corpo com_footer">
+					<div class="txt">Tem a certeza que quer apagar a sua foto?</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 vermelho">Sim</div>
+					<div class="nao verde">Não</div>
+				</div>
+			</div>
+			
+			
+			
+			<!--            NOTIFICACOES         -->
+			
+			
+			
+			
+			<div id="notificacoes" class="caixa" n="0">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Alertas</div>
+				</div>
+				<div class="corpo">
+					<div class="txt" style="width:90%; font-weight:900;">Clique nos alertas para os apagar</div>
+					<ul class="lista touchable">
+						<li>Sem Alertas</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--            OUTROS         -->
+			
+			
+			
+			
+			<div id="conclusao" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+				</div>
+				<div class="corpo com_footer">	
+					<div class="txt">A processar...<br/><br/><img src="images/loader.gif" width="40%" height="40%"/></div>
+				</div>
+				<div class="footer" style="visibility:hidden">
+					<div class="sim verde">Finalizar</div>
+				</div>
+			</div>
+			
+			<div id="verificacao_cancelar" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao">Verificação</div>
+				</div>
+				<div class="corpo com_footer">	
+					<div class="txt">Tem a certeza que quer cancelar?</div>
+				</div>
+				<div class="footer">
+					<div class="sim2 vermelho">Sim</div>
+					<div class="nao verde">Não</div>
+				</div>
+			</div>
+			
+			<div id="nprodutos" class="caixa">
+				<div class="header">
+					<div class="hora"></div>
+					<div class="localizacao"></div>
+				</div>
+				<div class="corpo com_footer">	
+					<div style="width: 90%; margin:auto;">
+						<div class="instrucao">Quantidade:</div>
+						<div id="menos">-</div>
+						<div style="display:inline-block; text-align:center; width:50%;"><span id="np" style="font-size:0.2in">0</span></div>
+						<div id="mais">+</div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="sim">Avançar</div>
+				</div>
+			</div>
+			
+			
+			
+			<div id="black_screen" class="caixa" style="background-color:black"></div>
+		</div>
+		
+		<div style="left:0.1in" id="button_back" class="button"><img src="images/back.png"/></div>
+		<div style="left:0.6in" id="button_home" class="button"><img src="images/home.png"/></div>
+		<div style="left:1.1in" id="button_lock" class="button"><img src="images/lock.png"/></div>
+		<div style="top:1.9in; left:0.6in" id="button_help" class="button">?</div>
+		
+		<script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="scripts/slick.min.js"></script>
+		<script type="text/javascript" src="scripts/irave.js"></script>
+
+	</body>
+	
+
+</html>

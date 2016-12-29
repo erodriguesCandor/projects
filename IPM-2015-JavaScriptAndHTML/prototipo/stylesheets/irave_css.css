@@ -1,0 +1,405 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+#iRave{
+	display: inline-block;
+	float: left;
+	width: 2in;
+	height: 2in;
+}
+
+body {
+	font-family: "Open Sans";
+	font-size: 0.105in;
+}
+
+.slick{
+	display: inline-block;
+	width: 1.458333in;
+	height: 1.458333in;
+	border: 0.2in solid black;
+	border-radius: 0.1in;
+}
+
+.slick .caixa {
+	border:0;
+}
+
+.caixa, .carousel {
+	display: inline-block;
+	width: 1.06in;
+	height: 1.06in;
+	border: 0.2in solid black;
+	border-radius: 0.1in;
+}
+
+	.header {
+		display: block;
+		width: 100%;
+		height: 16%;
+	}
+
+		.hora{
+			display: inline-block;
+			float:left;
+			width: 25%;
+			font-weight: bold;
+		}
+
+		.localizacao {
+			display: inline-block;
+			width: 75%;
+			text-align: center;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.nEcra {
+			display: inline-block;
+			float:right;
+			width: 16%;
+			font-weight: bold;
+		}
+	
+	.corpo {
+		display: block;
+		width: 100%;
+		height: 84%;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+		.menu {
+			display: inline-block;
+			float: left;
+			width: 50%;
+			height: 50%;
+			text-align: center;
+		}
+
+		.menu img, .button img, #ajuda_botoes img, .perfil img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.menu img{			
+			background-color:white;		
+		}
+		
+		.img {
+			overflow: hidden;
+			height: 63%;
+			width: 100%;
+		}
+
+		.legenda {
+			height: 37%;
+			width: 100%;
+		}
+
+		.txt {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.perfil div:nth-child(1) {
+			text-align: center;
+			margin: auto;
+		}
+
+		.perfil div:nth-child(2) {
+			text-align:center;
+			background-color: lightgray;
+			height: 0.54in;
+			width: 0.93in;
+			margin:auto;
+		}
+
+		.lista, .lista_final, .lista_precos, .musica, .preferencias ul {
+			margin: 0;
+		}
+
+		.lista li, .lista_final li, .lista_precos li{
+			list-style-type: none;
+			margin-left: -0.42in;
+			padding: 0.05in 0.02in 0.05in 0.02in;
+		}
+
+		.instrucao {
+			margin:auto;
+			text-align:center;
+			font-weight: 900;
+			margin-bottom:0.01in;
+		}
+		
+	.footer {
+		display: block;
+		margin-top: 0.01in;
+		height: 17%;
+		width: 100%;
+	}
+		
+		#mais, #menos{
+			display:inline-block; 
+			width: 0.2in; 
+			height: 0.2in; 
+			margin-top: 0.05in; 
+			text-align: center; 
+			font-weight: 900; 
+			font-size: 0.15in; 
+			color: white; 
+		}
+	
+		.outros, .sim2, .nao, .sim {
+			float: left;
+			color: white;
+			display: inline-block;
+			text-align: center;
+			padding-top: 0.02in;
+			width: 50%;
+			height: 100%;
+            background-color: lightgray;
+		}
+
+		.sim {
+			width: 100%;	
+		}
+
+		.vermelho {
+			background-color: red;
+			float:right;
+		}
+
+		#mais {
+			float: right;	
+		}
+
+		#mais, #menos, .verde {
+			background-color: #26BD00;
+		}
+
+#ajuda_botoes li div:first-child{
+	float: left;
+	height: 20%;
+	width: 20%;
+	margin-right: 5%;
+	border: 1px black solid;
+	border-radius: 100%;
+	padding: 3%;
+	font-size: 0.18in;
+	font-weight: 900;
+	text-align: center;
+}
+
+#ajuda_botoes li div{
+	display: inline-block;
+	width: 65%;
+}
+
+#ajuda_menus .corpo{
+	overflow-y: hidden;
+}
+
+#ajuda_menus .perfil div:nth-child(1){
+	font-weight: 900;
+}
+
+#ajuda_menus .perfil div:nth-child(2){
+	background-color: white;
+	width: 42%;
+	height: 28%;
+	margin-bottom: 2%;
+}
+
+#ajuda_menus .txt{
+	width: 100%;
+}
+
+#ajuda_menus img{
+	height: auto;
+}
+
+.com_footer{
+	height: 65%;
+}
+
+.sem_legenda {
+	height: 100%;
+}
+
+#mais:active, .verde:active {
+    background-color: green;   
+}
+
+#menos:active, .vermelho:active {
+    background-color: darkred;   
+}
+
+.touchable li:active, .menu:active {
+	background-color: lightgrey;
+	color: black;
+}
+
+li {
+	border-bottom: 1px solid black;
+}
+
+li:last-child{
+	border: 0;
+}
+
+.selected {
+  background-color: black;
+  color: white;
+}	
+
+.esq {
+	float: left;
+}
+
+.dir {
+	float: right;
+}
+
+marquee {
+	padding: 0 0.02in 0 0.02in;
+}
+
+div .slick_next {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-left: 20px solid red;
+	border-bottom: 10px solid transparent;
+}
+
+.button {
+	position:absolute;
+	top: 1.5in;
+	border-radius: 100%;
+	width: 0.2in;
+	height: 0.2in;
+	margin: 0.1in;
+	padding: 0.03in;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 0.2in;
+	font-weight: 900;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: gray;
+}
+
+.icon_camera{
+  margin:0;
+  width:100%;
+  height:100%;
+  background-color:#d8d8d8;
+  position:relative;
+  float:left;
+  border-radius:100%;
+}
+
+.icon_camera_body{
+  display:block;
+  width:70%;
+  height:50%;
+  position:absolute;
+  top:28%;
+  left:17%;
+  background-color:#000;
+  border-radius:20%;
+}
+.icon_camera_cannon{
+  content:"";
+  display:block;
+  width:20%;
+  height:21%;
+  border: 1px solid white;
+  position:absolute;
+  top:38%;
+  left:38%;
+  background-color:black;
+  border-radius:100%;
+}
+.icon_camera_button{
+  content:"";
+  display:block;
+  width:35%;
+  height:0.1in;
+  position:absolute;
+  top:20%;
+  left:20%;
+  background-color:#000;
+  border-radius:30%;
+}
+
+.demo {
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.mapa_arrow {
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 0.2in solid transparent;
+    border-right: 0.2in solid transparent;
+    border-bottom: 0.4in solid blue;
+    margin: auto;
+    margin-top: calc((80% - 0.4in)/2);
+    margin-bottom: calc((80% - 0.4in)/2);
+}
+
+.mapa_arrow:after {
+    content: "";
+    position: absolute;
+    top: 0.25in;
+    right: -0.2in;
+    height: 0;
+    width: 0;
+    border-left: 0.2in solid transparent;
+    border-right: 0.2in solid transparent;
+    border-bottom: 0.16in solid white;
+}
+
+.nalertas {
+	position: absolute;
+	top: 30%;
+	left: 15%;
+	width: 0.15in;
+	height: 0.15in;
+	padding: 0;
+	background-color: red;
+	border-radius: 100%;
+	color: white;
+	visibility: hidden;
+}
